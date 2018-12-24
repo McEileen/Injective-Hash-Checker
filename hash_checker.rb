@@ -4,16 +4,9 @@ class HashChecker
     end
 
     def is_injective
-        @target_hash.each_value do |target_value|
-            match_count = 0
-            @target_hash.each_value do |inner_value|
-                if inner_value == target_value
-                    match_count += 1
-                end
-                return false if match_count > 1
-            end
-        end
-        return true
+       @original_values_length = @target_hash.values.length
+       @deduped_values_length = @target_hash.values.uniq.length
+       return @original_values_length == @deduped_values_length
     end
 
 end
