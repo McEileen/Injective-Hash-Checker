@@ -1,0 +1,1 @@
+Check if a ruby hash is injective, meaning that no two keys have the same value.
